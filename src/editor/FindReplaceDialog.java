@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FindReplaceDialog extends JDialog {
-    private JTextField findField, replaceField;
-    private JButton findNextButton, replaceButton, replaceAllButton;
-    private JTextArea textArea;
+    private final JTextField findField;
+    private final JTextField replaceField;
+    private final JTextArea textArea;
     private int lastMatchIndex = 0;
 
     public FindReplaceDialog(JFrame parent, JTextArea textArea) {
@@ -22,13 +22,13 @@ public class FindReplaceDialog extends JDialog {
         findField = new JTextField(20);
         replaceField = new JTextField(20);
 
-        findNextButton = new JButton("Find Next");
-        replaceButton = new JButton("Replace");
-        replaceAllButton = new JButton("Replace All");
+        JButton findNextButton = new JButton("Find Next");
+        JButton replaceButton = new JButton("Replace");
+        JButton replaceAllButton = new JButton("Replace All");
 
-        findNextButton.addActionListener(e -> findNext());
-        replaceButton.addActionListener(e -> replace());
-        replaceAllButton.addActionListener(e -> replaceAll());
+        findNextButton.addActionListener(_ -> findNext());
+        replaceButton.addActionListener(_ -> replace());
+        replaceAllButton.addActionListener(_ -> replaceAll());
 
         gbc.gridx = 0;
         gbc.gridy = 0;
