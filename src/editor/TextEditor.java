@@ -40,14 +40,14 @@ public class TextEditor extends JFrame {
         editMenu.addSeparator();
         editMenu.add(findReplace);
 
-        newFile.addActionListener(e -> FileManager.newFile(this, textArea));
-        open.addActionListener(e -> FileManager.openFile(this, textArea));
-        save.addActionListener(e -> FileManager.saveFile(this, textArea));
+        newFile.addActionListener(_ -> FileManager.newFile(this, textArea));
+        open.addActionListener(_ -> FileManager.openFile(this, textArea));
+        save.addActionListener(_ -> FileManager.saveFile(this, textArea));
 
-        cut.addActionListener(e -> ActionHandlers.cut(textArea));
-        copy.addActionListener(e -> ActionHandlers.copy(textArea));
-        paste.addActionListener(e -> ActionHandlers.paste(textArea));
-        findReplace.addActionListener(e -> {
+        cut.addActionListener(_ -> ActionHandlers.cut(textArea));
+        copy.addActionListener(_ -> ActionHandlers.copy(textArea));
+        paste.addActionListener(_ -> ActionHandlers.paste(textArea));
+        findReplace.addActionListener(_ -> {
             FindReplaceDialog dialog = new FindReplaceDialog(this, textArea);
             dialog.setVisible(true);
         });
